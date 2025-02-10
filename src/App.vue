@@ -57,6 +57,8 @@ const chartData = computed(() => {
       data.push([country.name, country[selectedDataType.value]]);
     }
   });
+  console.log(data);
+  
   return data;
 });
 
