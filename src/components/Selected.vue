@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h2> Seleccionados : {{ codes.length }}</h2>
+    <div v-if="codes.length > 0">
+      <h2 > Seleccionados : {{ codes.length }}</h2>
     <ul>
       <li v-for="(code, index) in codesWithNames" :key="index">
         <span v-if="code">{{ code.name }}</span>
         <button @click="removeCode(index)">Desmarcar</button>
       </li>
     </ul>
+    </div>
+    <p v-else>Debes seleccionar un país</p>
   </div>
 </template>
 
