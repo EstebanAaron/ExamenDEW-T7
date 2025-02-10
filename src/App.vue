@@ -48,7 +48,7 @@ const clearCode = async () => {
   }
 }
 const chartData = computed(() => {
-  const data = [['pib', selectedDataType.value]];
+  const data = [[selectedCodes.value, selectedDataType.value]];
   selectedCodes.value.forEach(code => {
     // Aquí debes obtener el nombre del país y el dato correspondiente
     // Supongamos que tienes una función getCountryData que devuelve los datos del país
@@ -100,9 +100,7 @@ function getCountryData(code) {
       />
     </div>
     <div class="country-data">
-      <select v-model="selectedCode">
-      <option v-for="code in selectedCodes" :key="code" :value="code">{{ code }}</option>
-      </select>
+
       <CountryData 
       :code="selectedCode"
       @clearCode="clearCode"
